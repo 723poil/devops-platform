@@ -7,6 +7,8 @@ DevOps 플랫폼을 인프라, 프론트, 백엔드 전부 직접 개발해보�
   + [1주차](./docs/week1.md)
 
 ## 구상도
+![image](https://github.com/723poil/devops-platform/assets/75459370/3c6c1910-80c4-4bb5-b7b5-9373c4ecdfe8)
+
 
 ## skills
 
