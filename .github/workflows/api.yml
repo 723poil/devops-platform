@@ -3,8 +3,7 @@ name: devops-platform-api
 on:
   push:
     branches:
-      - main
-    # paths: "apps/api/**"
+      - dev/api
 
 jobs:
   build:
