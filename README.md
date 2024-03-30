@@ -1,4 +1,4 @@
-# DevOps 플랫폼 개발 스터디
+# DevOps 플랫폼 개발 스터디 (2024.03.28 ~ )
 DevOps 플랫폼을 인프라, 프론트, 백엔드 전부 직접 개발해보면서 경험해보는 스터디
 
 + [Turborepo](./docs/turborepo.md)
