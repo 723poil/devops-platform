@@ -10,7 +10,7 @@
 
 ## TodoList
 
-+ [x] 백스테이디 템플릿 선정
++ [x] 백스테이지 템플릿 선정
 + [x] github runner local에 설치
 + [ ] Next, Nest 프로젝트를 도커로 이미지 빌드하는 Github Action CI yaml 작성
 + [ ] Nest 통해 자신의 github repo에 있는 issue 긁어오는 api 구현
