@@ -1,41 +1,35 @@
-# Turborepo starter
-Turborepo와 pnpm을 활용한 모노레포로 구성되어 있습니다.
+# DevOps 플랫폼 개발 스터디
+DevOps 플랫폼을 인프라, 프론트, 백엔드 전부 직접 개발해보면서 경험해보는 스터디
 
-## Tech Stack
-- Nest.js
-- Next.js
-- TypeScript
++ [Turborepo](./docs/turborepo.md)
 
-## Getting Started
-- Repository 복제합니다.
-- `pnpm install` 을 실행하여 dependencies 항목 설치합니다.
-- `pnpm run dev`로 프로젝트를 실행합니다.
++ 주차별
+  + [1주차](./docs/week1.md)
 
-## Run Started
-Nestjs와 Nextjs를 동시에 실행 명령어는 다음과 같습니다.
-```bash
-pnpm dev
-```
-독립적으로 Nestjs 실행 명령어는 다음과 같습니다.
-```bash
-cd apps/web
-pnpm run dev
-```
-독립적으로 Nestjs 실행 명령어는 다음과 같습니다.
-```bash
-cd apps/api
-pnpm run start
-pnpm run dev # watch mode
-```
+## 구상도
 
-## Deploy Setting
-프로젝트를 배포 전 빌드를 수행해야 합니다.
+## skills
 
-본 프로젝트는 TurboRepo로 배포를 수행합니다.
-```bash
-pnpm run build
-```
-이후 Docker-Compose로 Docker 배포를 수행합니다.
-```bash
-docker-compose build -d
-```
+| | |
+|--|--|
+|CI/CD|Github Action, Github Kanban, ArgoCd|
+|Infra|AWS, k8s(eks)|
+|IaC|Terraform, Helm|
+|Monitoring|Grafana, Prometheus, Loki, Tempo, OpenTelemetry, Fluentbit|
+|Front|Next.js|
+|Back|Nest.js|
+
+
+## Backstage
+
+|카테고리|구현|구현 상세|
+|--|--|--|
+|쿠버네티스|클러스터 정보|클러스터명, pod갯수, restart현황, 클러스터 cpu - memory - ip, 클러스터 health check|
+|||마이크로 서비스 정보|pod갯수, status(running, restart수 등), pod cpu - memory - network, 할당된 워커노드 ip, HPA 발생시간, 최근 배포 시간 및 이미지 이름,|
+|배포|전체 배포 수(기간설정가능)||
+| |롤백 정보(기간설정 or 특정 서비스 선택 가능)|롤백한 마이크로 서비스 이름, 롤백된 이미지 정보, 롤백된 pod수, 배포 방식(롤링, 블루그린 등)|
+||마이크로 서비스 정보|배포 현황(특정 환경별 이미지 및 담당자), 현재 prd 배포 이미지 수 정보|
+||어뷰징|누가 워크플로우를 어기고 배포시도를 했는지|
+|이벤트|엔드포인트로 이벤트 보내기 설정||
+||이벤트 받을사람 지정||
+||이벤트 알람 push 이력||
