@@ -1,9 +1,11 @@
 name: Release Tag
 on:
-  push:
+  pull_request:
     branches:
       - deploy/api
-
+    types:
+      - Closed
+    
 permissions:
   contents: write
 
