@@ -10,11 +10,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: 버전 정보 추출
-      run: echo "release_version=$(echo '${{ github.ref }}' | egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3} ')" >> "$GITHUB_OUTPUT"
+      run: |
+        echo "release_version=$(echo '${{ github.ref }}' | egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3} ')" >> "$GITHUB_OUTPUT"
+        echo "test=${{ github.ref }}" >> $GITHUB_OUTPUT"
       id: extract_version_name
 
     - name: test
-      run: echo ${{ steps.extract_version_name.outputs.release_version }}
+      run: |
+        echo ${{ steps.extract_version_name.outputs.release_version }}
+        echo ${{ steps.extract_version_name.outputs.test }}
       
     - name: Release 생성 
       uses: actions/create-release@v1
