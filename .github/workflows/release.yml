@@ -25,5 +25,5 @@ jobs:
       env: 
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with: 
-        tag_name: ${{ steps.extract_version_name.outputs.version }}
-        release_name: ${{ steps.extract_version_name.outputs.version }}
+        tag_name: $(echo ${{ steps.extract_version_name.outputs.version }} | egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
+        release_name: $(echo ${{ steps.extract_version_name.outputs.version }} | egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
