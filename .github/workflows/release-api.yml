@@ -1,10 +1,10 @@
-name: Release Tag
+name: Release Api
 on:
   pull_request:
     branches:
       - deploy/api
     types:
-      - Closed
+      - closed
     
 permissions:
   contents: write
