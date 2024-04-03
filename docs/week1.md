@@ -18,5 +18,6 @@
 + [x] Next, Nest 프로젝트를 도커로 이미지 빌드하는 Github Action CI yaml 작성
 + [x] Nest 통해 자신의 github repo에 있는 issue 긁어오는 api 구현
 + [x] AWS 스터디용 계정 생성
++ [x] promethues, grafana 도커로 설치해서 nestjs api와 연동
 + [ ] (옵션) eks 생성 테라폼 작성
 + [ ] (옵션) github repo에서 tag생성 시 issue를 생성해주는 커스텀 액션 개발
