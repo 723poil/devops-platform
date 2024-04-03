@@ -27,6 +27,7 @@ WORKDIR /app
 COPY --from=builder /app/out/json/ .
 COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
 RUN pnpm install
+RUN #pnpm install -g pm2
 
 # Build the project and its dependencies
 COPY --from=builder /app/out/full/ .
@@ -49,8 +50,13 @@ RUN addgroup --system --gid 1001 nestjs
 RUN adduser --system --uid 1001 nestjs
 USER nestjs
 
+#COPY ./apps/api/.env /app/apps/api/.env
+
+
 # Copy the app folder
 COPY --from=installer /app .
 
 HEALTHCHECK CMD curl --fail http://localhost:3001/health || exit 1
 CMD node apps/api/dist/src/main.js
+
+#CMD ["sh", "-c", "pm2-runtime start apps/api/pm2.config.js"]

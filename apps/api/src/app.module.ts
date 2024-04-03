@@ -7,6 +7,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { HealthController } from './health/health.controller';
 import { OctoModule } from './octokit/octo.module';
+import { MetricsModule } from './config/prometheus/metrics.module';
 
 @Module({
   imports: [
@@ -21,13 +22,14 @@ import { OctoModule } from './octokit/octo.module';
     OctokitModule.forRootAsync({
       isGlobal: true,
       imports: [ConfigModule],
-      inject: [ConfigService,],
+      inject: [ConfigService],
       useFactory: async (configService: ConfigService) => ({
         octokitOptions: {
           auth: configService.get<string>('GITHUB_AUTH_TOKEN'),
-        }
+        },
       }),
     }),
+    MetricsModule,
 
     OctoModule,
   ],
