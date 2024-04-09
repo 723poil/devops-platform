@@ -11,11 +11,8 @@ FROM base AS builder
 RUN apk add --no-cache libc6-compat
 RUN apk update
 # Set working directory
-WORKDIR /app
-RUN pnpm install turbo --global
 
 COPY . .
-RUN turbo prune api --docker
 
 # Add lockfile and package.json's of isolated subworkspace
 FROM base AS installer
