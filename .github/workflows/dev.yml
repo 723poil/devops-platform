@@ -1,9 +1,9 @@
-name: devops-platform-web
+name: devops-platform-api
 
 on:
   push:
     branches:
-      - dev/web
+      - dev/api
 
 jobs:
   build:
@@ -39,7 +39,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: ./apps/web/Dockerfile
+          file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/devops-platform-web:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/devops-platform-api:latest
   
