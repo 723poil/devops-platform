@@ -18,8 +18,8 @@
 
 ## TodoList
 
-+ [ ] template NextJS에 적용
-+ [ ] 필요한 페이지 빼고 나머지 visibility hidden
++ [x] template NextJS에 적용
++ [x] 필요한 페이지 빼고 나머지 visibility hidden
 + [ ] 메인 대시보드 구성
 + [ ] k8s 대시보드 구성
 + [ ] 알림 대시보드 구성
