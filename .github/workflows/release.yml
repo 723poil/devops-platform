@@ -2,7 +2,7 @@ name: Release Api
 on:
   pull_request:
     branches:
-      - deploy/api
+      - main
     types:
       - closed
     
