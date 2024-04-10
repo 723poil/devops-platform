@@ -29,7 +29,11 @@ export class OctokitIssueDto implements IOctokitIssueDto {
   updatedAt: number;
   url: string;
 
-  static of(octokitResponse: any): OctokitIssueDto {
+  static of(
+    octokitResponse: any,
+    repoNm: string,
+    repoId: number,
+  ): IOctokitIssueDto {
     const labels: string[] = [];
 
     for (const label of octokitResponse.labels) {
@@ -42,8 +46,8 @@ export class OctokitIssueDto implements IOctokitIssueDto {
       updatedAt: dateToNumber(octokitResponse.updated_at),
       id: octokitResponse.id,
       issueNum: octokitResponse.number,
-      repoNm: octokitResponse.repository.name,
-      repoId: octokitResponse.repository.id,
+      repoNm: repoNm,
+      repoId: repoId,
       repositoryUrl: octokitResponse.html_url,
       state: octokitResponse.state,
       title: octokitResponse.title,
@@ -52,11 +56,15 @@ export class OctokitIssueDto implements IOctokitIssueDto {
     };
   }
 
-  static ofList(octokitResponse: any[]): OctokitIssueDto[] {
-    const octokitIssues: OctokitIssueDto[] = [];
+  static ofList(
+    octokitResponse: any[],
+    repoNm: string,
+    repoId: number,
+  ): IOctokitIssueDto[] {
+    const octokitIssues: IOctokitIssueDto[] = [];
 
     for (const octokitRes of octokitResponse) {
-      octokitIssues.push(OctokitIssueDto.of(octokitRes));
+      octokitIssues.push(OctokitIssueDto.of(octokitRes, repoNm, repoId));
     }
 
     return octokitIssues;
