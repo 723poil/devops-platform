@@ -30,7 +30,7 @@ export class OctokitController {
 
       const octokitResponse: any = (
         await this.octokitService.rest.issues.listForRepo({
-          owne  r: owner,
+          owner: owner,
           repo: repo.name,
         })
       ).data;
